@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+#borders active_color=0xfffc0504 inactive_color=0xff494d64 width=7.0 2>/dev/null 1>&2 &
+
+# global settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          off
+yabai -m config window_origin_display        default
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      -1.0
+yabai -m config active_window_opacity        0.0
+yabai -m config normal_window_opacity        -1.90
+#yabai -m config window_border                on
+#yabai -m config window_border_width          2
+#yabai -m config active_window_border_color   0xfffc0504
+#yabai -m config normal_window_border_color   0xff555554
+#yabai -m config insert_feedback_color        0xffd75f5e
+yabai -m config split_ratio                  -1.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action0                move
+yabai -m config mouse_action1                resize
+yabai -m config mouse_drop_action            swap
+
+ general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  4
+yabai -m config bottom_padding               4
+yabai -m config left_padding                 4
+yabai -m config right_padding                4
+yabai -m config window_gap                   8
+
+# apps to not manage (ignore)
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Systémové nastavenia$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Macs Fan Control$" manage=off
+yabai -m rule --add app="^Microsoft Teams$" manage=off
+yabai -m rule --add app="^Unshaky$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^PagMan$" manage=off
+yabai -m rule --add app="^Monitor aktivity$" manage=off
+yabai -m rule --add app="^Kalendár$" manage=off
+yabai -m rule --add app="^Kalkulačka$" manage=off
+yabai -m rule --add app="^Správy$" manage=off
+yabai -m rule --add app="^rts_shit$" manage=off
+yabai -m rule --add app="^fraktal$" manage=off
+yabai -m rule --add app="^VLC media player$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^engine$" manage=off
+yabai -m rule --add app="^editor$" manage=off
+yabai -m rule --add app="^Ryujinx$" manage=off
+yabai -m rule --add app="^Kitty$" manage=on
+yabai -m rule --add app="^FOREN$" manage=on
+
+borders active_color=0xffff0000 width=4.0 &
+echo "yabai configuration loaded.."
