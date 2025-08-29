@@ -8,14 +8,18 @@ if test -f /Users/samsi/anaconda3/bin/conda
     eval /Users/samsi/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
+#
+#
+#
+
 function yy
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
+    set temp_file (mktemp -t "yazi-cwd-XXXXXX")
+    yazi --cwd-file="$temp_file"
+    if test -f "$temp_file"
+        cd (cat "$temp_file")
+        rm -f "$temp_file"
+    end
 end
 
-
-
+bind \cp yy
+bind \e\[99\;5u yy
