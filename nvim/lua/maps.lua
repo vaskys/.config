@@ -4,24 +4,21 @@ local function map(mode, lhs, rhs)
   vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true })
 end
 
+map("n", "J", "<C-d>")
+map("n", "K", "<C-u>")
+
 
 map("n", "dd", [["_dd]])
 map("n", "D",  [["_D]])
-
 map({ "n", "v", "x", "o" }, "d",    [["_d]])
 map({ "n", "v", "x", "o" }, "c",    [["_c]])
 map({ "n", "v", "x", "o" }, "<Del>",[["_d]])
-
-map("n", "C", [["_C]])
 
 -- Window Navigation
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-l>", "<C-w>l")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-j>", "<C-w>j")
-
-
-map("n", "F", "<CMD>Spectre<CR>")
 
 -- Neotree
 map("n", "<C-b>", "<CMD>Neotree toggle<CR>")
@@ -34,14 +31,14 @@ map("n", "W", "<CMD>close<CR>")
 -- Telescope
 map("n", "<C-p>", "<CMD>Telescope find_files<CR>")
 map("n", "P", "<CMD>Telescope find_files<CR>")
-map("n", "<c-f>", "<cmd>telescope live_grep<cr>")
-map("n", "<leader>k", "<CMD>Telescope keymaps<CR>")
+map("n", "<C-f>", "<CMD>Telescope live_grep<CR>")
+map("n", "F", "<CMD>Spectre<CR>")
 
 -- LSP
 map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
 map("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gt", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
-map("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>")
+map("n", "H", "<CMD>lua vim.lsp.buf.hover()<CR>")
 map("n","R","<CMD>lua vim.lsp.buf.rename()<CR>")
 map("n","L","<CMD>lua vim.diagnostic.open_float()<CR>")
 
@@ -56,9 +53,15 @@ map("n", "<Leader>dc", "<cmd>lua require'dap'.continue()<CR>")
 map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
 map(
 	"n",
-	"<leader>dd",
-	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('breakpoint condition: '))<cr>")
+	"<Leader>dd",
+	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 map("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>")
 map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>")
+
+--fuck lower/uppers case
+map("v", "u", "<Nop>")
+map("v", "U", "<Nop>")
+
+
 
 
