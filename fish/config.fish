@@ -22,4 +22,4 @@ function yy
 end
 
 #bind \cp yy
-bind \e\[99\;5u yy
+bind \e\[99\;6u yy
