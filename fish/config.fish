@@ -23,3 +23,10 @@ end
 
 #bind \cp yy
 bind \e\[99\;6u yy
+
+# --- Keep tmux pane aware of current working directory ---
+if set -q TMUX
+    function update_tmux_pwd --on-variable PWD
+        tmux refresh-client -S
+    end
+end
