@@ -31,6 +31,7 @@ map("n", "<leader>g", "<CMD>Telescope live_grep<CR>")
 map("n", "<leader><leader>", ":Telescope find_files<CR>")
 map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<leader><Tab>", ":Telescope oldfiles<CR>")
+map("n", "<leader>k", ":Telescope keymaps<CR>")
 map_nowait("n", "<leader>ff", ":Spectre<CR>")
 
 -- LSP
