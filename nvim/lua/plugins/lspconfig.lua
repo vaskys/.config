@@ -37,10 +37,5 @@ return {
       root_markers = { ".clangd", "compile_commands.json", ".git" },
       filetypes = { "c", "cpp", "objc", "objcpp" },
     }
-    vim.lsp.enable({
-        "clangd",
-        "sourcekit",
-        "pyright",
-    })
   end,
 }

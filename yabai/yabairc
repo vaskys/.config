@@ -59,6 +59,11 @@ yabai -m rule --add app="^Ryujinx$" manage=off
 yabai -m rule --add app="^Kitty$" manage=on
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^App$" manage=off
+yabai -m rule --add app="^IDK$" manage=off
+yabai -m rule --add app="^gin$" manage=off
+
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 #borders active_color=0xffff0000 width=5.0 &
 echo "yabai configuration loaded.."

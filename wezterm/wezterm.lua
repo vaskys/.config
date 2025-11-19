@@ -11,6 +11,9 @@ config.window_padding = { left = 5, right = 0, top = 10, bottom = 0 }
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
+config.front_end = "WebGpu"
+config.webgpu_power_preference = "LowPower"
+config.cursor_blink_rate = 0
 
 config.keys = {
   { key = 'LeftArrow', mods = 'CMD', action = act.ActivateTabRelative(-1) },

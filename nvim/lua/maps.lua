@@ -8,6 +8,17 @@ local function map_nowait(mode, lhs, rhs)
   vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true, nowait = true })
 end
 
+local function toggle_qf()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.fn.win_gettype(win) == "quickfix" then
+      vim.cmd("cclose")
+      return
+    end
+  end
+  vim.cmd("copen")
+end
+
+
 map("n", "J", "<Nop>")
 map("n", "K", "<Nop>")
 
@@ -26,6 +37,9 @@ map("n", "<leader>j", "<C-w>j")
 map("n", "<leader>e", "<CMD>vs<CR>")
 map("n", "<leader>w", "<CMD>close<CR>")
 
+--save all n shit
+map("n", "<leader>s", "<CMD>wall<CR>")
+
 -- Telescope
 map("n", "<leader>g", "<CMD>Telescope live_grep<CR>")
 map("n", "<leader><leader>", ":Telescope find_files<CR>")
@@ -34,6 +48,10 @@ map("n", "<leader><Tab>", ":Telescope oldfiles<CR>")
 map("n", "<leader>k", ":Telescope keymaps<CR>")
 map_nowait("n", "<leader>ff", ":Spectre<CR>")
 
+-- QuickFix
+map("n", "<leader>o", toggle_qf)
+map("n", "<leader>j", "<CMD>cnext <CR>")
+map("n", "<leader>k", "<CMD>cprev <CR>")
 -- LSP
 map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
 map("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>")
@@ -58,6 +76,9 @@ map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>")
 --fuck lower/uppers case
 map("v", "u", "<Nop>")
 map("v", "U", "<Nop>")
+
+--fuck highlight
+map("n", "#", "<Nop>")
 
 --fuck cmd history
 map("n", "q:", "<Nop>")
