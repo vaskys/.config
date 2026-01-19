@@ -37,8 +37,5 @@ map cmd+n launch --location=hsplit --cwd=current
 fzf --fish | source
 map cmd+p send_text all \e[99;6u
 
-
-# BEGIN_KITTY_THEME
-# Carbonfox
 include current-theme.conf
-# END_KITTY_THEME
+

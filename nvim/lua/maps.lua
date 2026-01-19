@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 
 local function map(mode, lhs, rhs)
   vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true })
@@ -18,6 +17,8 @@ local function toggle_qf()
   vim.cmd("copen")
 end
 
+-- fuck select paste clipboard
+map("x", "p", '"_dP')
 
 map("n", "J", "<Nop>")
 map("n", "K", "<Nop>")
@@ -46,7 +47,6 @@ map("n", "<leader><leader>", ":Telescope find_files<CR>")
 map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<leader><Tab>", ":Telescope oldfiles<CR>")
 map("n", "<leader>k", ":Telescope keymaps<CR>")
-map_nowait("n", "<leader>ff", ":Spectre<CR>")
 
 -- QuickFix
 map("n", "<leader>o", toggle_qf)
@@ -59,6 +59,7 @@ map("n", "gt", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 map("n", "H", "<CMD>lua vim.lsp.buf.hover()<CR>")
 map("n","R","<CMD>lua vim.lsp.buf.rename()<CR>")
 map("n","L","<CMD>lua vim.diagnostic.open_float()<CR>")
+map("n","<leader>t","<CMD>LspClangdSwitchSourceHeader<CR>")
 
 -- Previous buffer
 map("n", "<Tab>", "<CMD>b#<CR>")
@@ -82,3 +83,24 @@ map("n", "#", "<Nop>")
 
 --fuck cmd history
 map("n", "q:", "<Nop>")
+
+
+map("n", "<S-Down>", '<Nop>')
+map("n", "<S-Up>", '<Nop>')
+map("n", "<S-Left>", '<Nop>')
+map("n", "<S-Right>", '<Nop>')
+
+map("i", "<S-Down>", '<Nop>')
+map("i", "<S-Up>", '<Nop>')
+map("i", "<S-Left>", '<Nop>')
+map("i", "<S-Right>", '<Nop>')
+
+map("v", "<S-Down>", '<Nop>')
+map("v", "<S-Up>", '<Nop>')
+map("v", "<S-Left>", '<Nop>')
+map("v", "<S-Right>", '<Nop>')
+
+map("x", "<S-Down>", '<Nop>')
+map("x", "<S-Up>", '<Nop>')
+map("x", "<S-Left>", '<Nop>')
+map("x", "<S-Right>", '<Nop>')

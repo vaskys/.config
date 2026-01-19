@@ -1,5 +1,6 @@
-require("settings")
-require("lazy_plugin")
-require("maps")
+vim.g.mapleader = " "
 
+require("lazy_plugin")
+require("settings")
+require("maps")
 
