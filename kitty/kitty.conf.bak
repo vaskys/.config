@@ -37,5 +37,14 @@ map cmd+n launch --location=hsplit --cwd=current
 fzf --fish | source
 map cmd+p send_text all \e[99;6u
 
-include current-theme.conf
 
+dim_inactive_windows true
+inactive_text_alpha 0.1
+
+
+# BEGIN_KITTY_THEME
+include unlucky.conf
+# END_KITTY_THEME
+#
+#
+#

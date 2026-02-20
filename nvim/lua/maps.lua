@@ -104,3 +104,4 @@ map("x", "<S-Down>", '<Nop>')
 map("x", "<S-Up>", '<Nop>')
 map("x", "<S-Left>", '<Nop>')
 map("x", "<S-Right>", '<Nop>')
+
