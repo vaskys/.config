@@ -5,9 +5,6 @@ return {
     "nvim-lua/plenary.nvim" 
   },
     config = function()
-        require("telescope").setup({
-      no_ignore = true,
-      hidden = true
-    })
+        require("telescope").setup()
     end,
 }
