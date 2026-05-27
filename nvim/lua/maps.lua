@@ -19,9 +19,6 @@ end
 -- fuck select paste clipboard
 map("x", "p", '"_dP')
 
-map("n", "J", "<Nop>")
-map("n", "K", "<Nop>")
-
 map("n", "dd", [["_dd]])
 map("n", "D", [["_D]])
 map({ "n", "v", "x", "o" }, "d", [["_d]])
@@ -46,15 +43,18 @@ map("n", "<leader><leader>", ":Telescope find_files<CR>")
 map("n", "<leader>f", "<CMD>lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true })<CR>")
 map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<S-Tab>", ":Telescope oldfiles<CR>")
-map("n", "<leader>k", ":Telescope keymaps<CR>")
+map("n", "gs", ":Telescope grep_string<CR>")
+map("n", "<leader>m", "<CMD>Telescope lsp_document_symbols<CR>")
+map("n", "<leader>M", "<CMD>Telescope lsp_workspace_symbols<CR>")
 
 -- QuickFix
 map("n", "<leader>o", toggle_qf)
-map("n", "<leader>j", "<CMD>cnext <CR>")
-map("n", "<leader>k", "<CMD>cprev <CR>")
+map("n", "J", "<CMD>cnext <CR>")
+map("n", "K", "<CMD>cprev <CR>")
 
 -- LSP
 map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
+map("n", "gr", "<CMD>lua vim.lsp.buf.references()<CR>")
 map("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gt", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 map("n", "H", "<CMD>lua vim.lsp.buf.hover()<CR>")
@@ -81,9 +81,6 @@ map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>")
 --fuck lower/uppers case
 map("v", "u", "<Nop>")
 map("v", "U", "<Nop>")
-
---fuck highlight
-map("n", "#", "<Nop>")
 
 --fuck cmd history
 map("n", "q:", "<Nop>")
