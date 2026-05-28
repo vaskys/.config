@@ -24,9 +24,9 @@ o.termguicolors = true
 o.paste = false
 
 -- Indentation Sync (Matches clang-format IndentWidth: 4)
-o.shiftwidth = 4 -- Number of spaces for each step of (auto)indent
-o.tabstop = 4 -- Number of spaces that a <Tab> counts for
-o.softtabstop = 4 -- Number of spaces a <Tab> counts for while editing
+o.shiftwidth = 4   -- Number of spaces for each step of (auto)indent
+o.tabstop = 4      -- Number of spaces that a <Tab> counts for
+o.softtabstop = 4  -- Number of spaces a <Tab> counts for while editing
 o.expandtab = true -- Use spaces instead of tabs
 
 -- Indentation Logic (Disabled to let conform.nvim handle the heavy lifting)
@@ -45,13 +45,13 @@ o.autowriteall = true
 
 vim.api.nvim_set_hl(0, "StatusLineFileName", { fg = "#ff0000", bold = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
-	callback = function()
-		vim.opt_local.statusline = "%#StatusLineFileName#%f%* %m"
-	end,
+    callback = function()
+        vim.opt_local.statusline = "%#StatusLineFileName#%f%* %m"
+    end,
 })
 
 vim.api.nvim_create_autocmd("WinLeave", {
-	callback = function()
-		vim.opt_local.statusline = "%f %m" -- plain, no color
-	end,
+    callback = function()
+        vim.opt_local.statusline = "%f %m" -- plain, no color
+    end,
 })

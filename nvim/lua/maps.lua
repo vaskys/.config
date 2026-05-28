@@ -13,7 +13,7 @@ local function toggle_qf()
             return
         end
     end
-    vim.cmd("copen")
+    vim.cmd("botright copen 10")
 end
 
 -- fuck select paste clipboard

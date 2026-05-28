@@ -1,4 +1,4 @@
--- unlucky.nvim
+-wlp[]ceqw'l;csvel';.nvim
 vim.cmd("highlight clear")
 vim.cmd("set termguicolors")
 vim.g.colors_name = "unlucky"
