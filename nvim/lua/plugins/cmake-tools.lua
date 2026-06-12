@@ -37,7 +37,7 @@ return {
             },
             cmake_executor = {
                 name = "toggleterm",
-                opts = {},
+                opts = { focus = false },
                 default_opts = {
                     quickfix = {
                         show = "always",
@@ -51,6 +51,9 @@ return {
                         close_on_exit = false,
                         auto_scroll = true,
                         singleton = true,
+                        focus = false,
+                        start_insert = false,
+                        focus_on_open = false,
                     },
                     overseer = {
                         new_task_opts = {
@@ -82,7 +85,7 @@ return {
             },
             cmake_runner = {
                 name = "toggleterm",
-                opts = {},
+                opts = { focus = false },
                 default_opts = {
                     quickfix = {
                         show = "always",
@@ -96,6 +99,9 @@ return {
                         close_on_exit = false,
                         auto_scroll = true,
                         singleton = true,
+                        focus = false,
+                        start_insert = false,
+                        focus_on_open = false,
                     },
                     overseer = {
                         new_task_opts = {

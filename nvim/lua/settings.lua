@@ -43,15 +43,15 @@ o.autowriteall = true
 -- vim.api.nvim_set_hl(0, "WinBar", { fg = "#ff0000", bold = true })
 -- vim.api.nvim_set_hl(0, "WinBarNC", { fg = "#45475a" })
 
-vim.api.nvim_set_hl(0, "StatusLineFileName", { fg = "#ff0000", bold = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
-    callback = function()
-        vim.opt_local.statusline = "%#StatusLineFileName#%f%* %m"
-    end,
-})
-
-vim.api.nvim_create_autocmd("WinLeave", {
-    callback = function()
-        vim.opt_local.statusline = "%f %m" -- plain, no color
-    end,
-})
+-- vim.api.nvim_set_hl(0, "StatusLineFileName", { fg = "#ff0000", bold = true })
+-- vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
+--     callback = function()
+--         vim.opt_local.statusline = "%#StatusLineFileName#%f%* %m"
+--     end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("WinLeave", {
+--     callback = function()
+--         vim.opt_local.statusline = "%f %m" -- plain, no color
+--     end,
+-- })
