@@ -1,10 +1,8 @@
 return {
     "Civitasv/cmake-tools.nvim",
-    dependencies = {
-        "akinsho/toggleterm.nvim",
-    },
     config = function()
         local osys = require("cmake-tools.osys")
+
         require("cmake-tools").setup({
             cmake_command = "cmake",
             ctest_command = "ctest",
@@ -22,7 +20,6 @@ return {
                 action = "soft_link",
                 target = vim.loop.cwd(),
             },
-            cmake_kits_path = nil,
             cmake_variants_message = {
                 short = { show = true },
                 long = { show = true, max_length = 40 },
@@ -35,98 +32,27 @@ return {
                 runInTerminal = true,
                 console = "integratedTerminal",
             },
+
             cmake_executor = {
-                name = "toggleterm",
-                opts = { focus = false },
-                default_opts = {
-                    quickfix = {
-                        show = "always",
-                        position = "belowright",
-                        size = 10,
-                        encoding = "utf-8",
-                        auto_close_when_success = true,
-                    },
-                    toggleterm = {
-                        direction = "horizontal",
-                        close_on_exit = false,
-                        auto_scroll = true,
-                        singleton = true,
-                        focus = false,
-                        start_insert = false,
-                        focus_on_open = false,
-                    },
-                    overseer = {
-                        new_task_opts = {
-                            strategy = {
-                                "toggleterm",
-                                direction = "horizontal",
-                                auto_scroll = true,
-                                quit_on_exit = "success",
-                            },
-                        },
-                        on_new_task = function(task)
-                            require("overseer").open({ enter = false, direction = "right" })
-                        end,
-                    },
-                    terminal = {
-                        name = "Main Terminal",
-                        prefix_name = "[CMakeTools]: ",
-                        split_direction = "horizontal",
-                        split_size = 11,
-                        single_terminal_per_instance = true,
-                        single_terminal_per_tab = true,
-                        keep_terminal_static_location = true,
-                        auto_resize = true,
-                        start_insert = false,
-                        focus = false,
-                        do_not_add_newline = false,
-                    },
+                name = "terminal",
+                opts = {
+                    split_direction = "horizontal",
+                    split_size = 11,
+                    single_terminal_per_instance = true,
+                    single_terminal_per_tab = true,
+                    keep_terminal_static_location = true,
+                    auto_resize = true,
                 },
             },
             cmake_runner = {
-                name = "toggleterm",
-                opts = { focus = false },
-                default_opts = {
-                    quickfix = {
-                        show = "always",
-                        position = "belowright",
-                        size = 10,
-                        encoding = "utf-8",
-                        auto_close_when_success = true,
-                    },
-                    toggleterm = {
-                        direction = "horizontal",
-                        close_on_exit = false,
-                        auto_scroll = true,
-                        singleton = true,
-                        focus = false,
-                        start_insert = false,
-                        focus_on_open = false,
-                    },
-                    overseer = {
-                        new_task_opts = {
-                            strategy = {
-                                "toggleterm",
-                                direction = "horizontal",
-                                auto_scroll = true,
-                                quit_on_exit = "success",
-                            },
-                        },
-                        on_new_task = function(task) end,
-                    },
-                    terminal = {
-                        name = "Main Terminal",
-                        prefix_name = "[CMakeTools]: ",
-                        split_direction = "horizontal",
-                        split_size = 11,
-                        single_terminal_per_instance = true,
-                        single_terminal_per_tab = true,
-                        keep_terminal_static_location = true,
-                        auto_resize = true,
-                        start_insert = false,
-                        focus = false,
-                        do_not_add_newline = false,
-                    },
+                name = "terminal",
+                opts = {
+                    split_direction = "horizontal",
+                    split_size = 11,
+                    single_terminal_per_instance = true,
+                    single_terminal_per_tab = true,
+                    keep_terminal_static_location = true,
+                    auto_resize = true,
                 },
             },
             cmake_notifications = {

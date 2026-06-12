@@ -60,6 +60,7 @@ map("n", "gt", "<CMD>lua vim.lsp.buf.type_definition()<CR>")
 map("n", "H", "<CMD>lua vim.lsp.buf.hover()<CR>")
 map("n", "R", "<CMD>lua vim.lsp.buf.rename()<CR>")
 map("n", "L", "<CMD>lua vim.diagnostic.open_float()<CR>")
+
 map("n", "<leader>t", "<CMD>LspClangdSwitchSourceHeader<CR>")
 map("n", "<leader>r", "<CMD>CMakeRun<CR>")
 
