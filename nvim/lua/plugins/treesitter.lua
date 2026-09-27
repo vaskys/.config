@@ -1,54 +1,45 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  event = { "BufReadPre", "BufNewFile" },
-  build = ":TSUpdate",
-  dependencies = {
-    "windwp/nvim-ts-autotag",
-  },
-  config = function()
-    local treesitter = require("nvim-treesitter.configs")
+	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	event = { "BufReadPre", "BufNewFile" },
+	build = ":TSUpdate",
 
-    treesitter.setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = { enable = false},
-      autotag = {
-        enable = true,
-      },
-      ensure_installed = {
-        "json",
-        "javascript",
-        "typescript",
-        "tsx",
-        "yaml",
-        "html",
-        "css",
-        "markdown",
-        "markdown_inline",
-        "bash",
-        "lua",
-        "vim",
-        "dockerfile",
-        "gitignore",
-        "c",
-        "rust",
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
-    })
-  end,
+	dependencies = {
+		{
+			"windwp/nvim-ts-autotag",
+			opts = {},
+		},
+	},
+
+	config = function()
+		require("nvim-treesitter.parsers").hlsl = {
+			install_info = {
+				url = "https://github.com/tree-sitter-grammars/tree-sitter-hlsl",
+				revision = "main",
+			},
+		}
+
+		require("nvim-treesitter").setup({
+			ensure_installed = {
+				"json",
+				"javascript",
+				"typescript",
+				"tsx",
+				"yaml",
+				"html",
+				"css",
+				"markdown",
+				"markdown_inline",
+				"bash",
+				"lua",
+				"vim",
+				"dockerfile",
+				"gitignore",
+				"c",
+				"rust",
+				"hlsl",
+			},
+			auto_install = true,
+		})
+	end,
 }

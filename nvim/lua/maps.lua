@@ -105,3 +105,25 @@ map("x", "<S-Down>", "<Nop>")
 map("x", "<S-Up>", "<Nop>")
 map("x", "<S-Left>", "<Nop>")
 map("x", "<S-Right>", "<Nop>")
+
+map("n", "<leader>dj", function()
+    vim.diagnostic.jump({ count = 1 })
+end)
+
+map("n", "<leader>dk", function()
+    vim.diagnostic.jump({ count = -1 })
+end)
+
+map("n", "<leader>ej", function()
+    vim.diagnostic.jump({
+        count = 1,
+        severity = vim.diagnostic.severity.ERROR,
+    })
+end)
+
+map("n", "<leader>ek", function()
+    vim.diagnostic.jump({
+        count = -1,
+        severity = vim.diagnostic.severity.ERROR,
+    })
+end)
